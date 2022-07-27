@@ -1,8 +1,9 @@
 import torch.nn as nn
 import torch.nn.functional as F
+from efficientnet_pytorch import EfficientNet
 from base import BaseModel
 
-
+'''
 class MnistModel(BaseModel):
     def __init__(self, num_classes=10):
         super().__init__()
@@ -20,3 +21,11 @@ class MnistModel(BaseModel):
         x = F.dropout(x, training=self.training)
         x = self.fc2(x)
         return F.log_softmax(x, dim=1)
+'''
+class EffNet(nn.Module):
+    def __init__(self, num_classes=5):
+        super(EffNet, self).__init__()
+        self.eff = EfficientNet.from_pretrained('efficientnet-b7', num_classes=num_classes, in_channels=1)
+    def forward(self, x):
+        x = self.eff(x)
+        return x

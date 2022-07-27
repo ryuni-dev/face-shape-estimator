@@ -1,13 +1,13 @@
 {
-    "name": "Mnist_LeNet",
+    "name": "Face Shape - EfficientNet B7",
     "n_gpu": 1,
 
     "arch": {
-        "type": "MnistModel",
+        "type": "EffNet",
         "args": {}
     },
     "data_loader": {
-        "type": "MnistDataLoader",
+        "type": "FaceShapeDataLoader",
         "args":{
             "data_dir": "data/",
             "batch_size": 128,
