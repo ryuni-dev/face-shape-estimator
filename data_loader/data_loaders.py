@@ -4,8 +4,8 @@ import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
 from torchvision import datasets, transforms
-#from base import BaseDataLoader
-# Dataset
+
+
 class FaceShapeDataset(Dataset):
     def __init__(self, df, transform=None, split="train"):
         self.df = df.reset_index(drop=True)
@@ -49,35 +49,6 @@ class FaceShapeDataset(Dataset):
             label = self.df.loc[idx, "label"]
             label = self.label2idx[label]
             return img, torch.tensor(label)
-
-'''
-class MnistDataLoader(BaseDataLoader):
-    """
-    MNIST data loading demo using BaseDataLoader
-    """
-    def __init__(self, data_dir, batch_size, shuffle=True, validation_split=0.0, num_workers=1, training=True):
-        trsfm = transforms.Compose([
-            transforms.ToTensor(),
-            transforms.Normalize((0.1307,), (0.3081,))
-        ])
-        self.data_dir = data_dir
-        self.dataset = datasets.MNIST(self.data_dir, train=training, download=True, transform=trsfm)
-        super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers)
-
-class FaceShapeDataLoader(DataLoader):
-    """
-    Face Shape data loading demo using BaseDataLoader
-    """
-    def __init__(self, data_dir, batch_size=128, shuffle=True):
-        trsfm = transforms.Compose([
-            transforms.Resize((256, 256)),
-            transforms.CenterCrop(224),
-            transforms.ToTensor(),
-        ])
-        self.data_dir = data_dir
-        self.dataset = FaceShapeDataset(self.data_dir, transform=trsfm)
-        super().__init__(self.dataset, batch_size, shuffle)
-'''
 
 def load_train_data(
             data_dir,
