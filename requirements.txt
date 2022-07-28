@@ -1,5 +1,12 @@
+cv2
+pillow
+
 torch>=1.1
 torchvision
 numpy
+
+pandas
+scikit-learn 
+
 tqdm
 tensorboard>=1.14

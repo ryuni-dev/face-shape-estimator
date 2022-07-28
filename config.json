@@ -7,13 +7,27 @@
         "args": {}
     },
     "data_loader": {
-        "type": "FaceShapeDataLoader",
+        "type": "load_train_data",
         "args":{
-            "data_dir": "data/",
-            "batch_size": 128,
-            "shuffle": true,
-            "validation_split": 0.1,
-            "num_workers": 2
+            "data_dir": "data/train.csv",
+            "batch_size": 16,
+            "shuffle": true
+        }
+    },
+    "val_data_loader": {
+        "type": "load_val_data",
+        "args":{
+            "data_dir": "data/val.csv",
+            "batch_size": 32,
+            "shuffle": false
+        }
+    },
+    "test_data_loader": {
+        "type": "load_test_data",
+        "args":{
+            "data_dir": "data/test.csv",
+            "batch_size": 32,
+            "shuffle": false
         }
     },
     "optimizer": {
@@ -36,7 +50,7 @@
         }
     },
     "trainer": {
-        "epochs": 100,
+        "epochs": 20,
 
         "save_dir": "saved/",
         "save_period": 1,

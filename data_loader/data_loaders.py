@@ -91,6 +91,7 @@ def load_train_data(
             transforms.CenterCrop(224),
             transforms.ToTensor(),
             ])
+
     return DataLoader(
                     FaceShapeDataset(train_df, transform=transform, split="train"),
                     batch_size=batch_size, shuffle=shuffle
@@ -108,7 +109,26 @@ def load_val_data(
             transforms.CenterCrop(224),
             transforms.ToTensor(),
             ])
+
     return DataLoader(
                     FaceShapeDataset(val_df, transform=transform, split="val"),
+                    batch_size=batch_size, shuffle=shuffle
+                    )
+
+def load_test_data(
+            data_dir,
+            batch_size=32,
+            shuffle=False
+            ):
+    test_df = pd.read_csv(data_dir)
+
+    transform = transforms.Compose([
+            transforms.Resize((256, 256)),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            ])
+
+    return DataLoader(
+                    FaceShapeDataset(test_df, transform=transform, split="test"),
                     batch_size=batch_size, shuffle=shuffle
                     )

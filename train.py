@@ -14,36 +14,41 @@ from utils import prepare_device
 # fix random seeds for reproducibility
 SEED = 123
 torch.manual_seed(SEED)
-#torch.backends.cudnn.deterministic = True
-#torch.backends.cudnn.benchmark = False
+'''
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+'''
 np.random.seed(SEED)
-
-TRAIN_PATH = "data/train.csv"
-VALID_PATH = "data/val.csv"
 
 
 def main(config):
     logger = config.get_logger('train')
 
     # setup data_loader instances
-    #data_loader = config.init_obj('data_loader', module_data)
-    #valid_data_loader = data_loader.split_validation()
+    data_loader = config.init_obj('data_loader', module_data)
+    valid_data_loader = config.init_obj('val_data_loader', module_data)
+    
+    '''
+    TRAIN_PATH = "data/train.csv"
+    VALID_PATH = "data/val.csv"
     data_loader = module_data.load_train_data(TRAIN_PATH)
     valid_data_loader = module_data.load_val_data(VALID_PATH)
+    '''
 
     # build model architecture, then print to console
     model = config.init_obj('arch', module_arch)
     logger.info(model)
 
-    # for m1 mac
-    device = torch.device("mps")
+    device = torch.device('cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu')
     model = model.to(device)
 
     # prepare for (multi-device) GPU training
-    #device, device_ids = prepare_device(config['n_gpu'])
-    #model = model.to(device)
-    #if len(device_ids) > 1:
-    #    model = torch.nn.DataParallel(model, device_ids=device_ids)
+    '''
+    device, device_ids = prepare_device(config['n_gpu'])
+    model = model.to(device)
+    if len(device_ids) > 1:
+        model = torch.nn.DataParallel(model, device_ids=device_ids)
+    '''
 
     # get function handles of loss and metrics
     criterion = getattr(module_loss, config['loss'])
