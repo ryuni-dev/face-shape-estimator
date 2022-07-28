@@ -38,7 +38,7 @@
             "amsgrad": true
         }
     },
-    "loss": "nll_loss",
+    "loss": "cross_entropy_loss",
     "metrics": [
         "accuracy", "top_k_acc"
     ],
@@ -50,14 +50,14 @@
         }
     },
     "trainer": {
-        "epochs": 20,
+        "epochs": 30,
 
         "save_dir": "saved/",
         "save_period": 1,
         "verbosity": 2,
         
         "monitor": "min val_loss",
-        "early_stop": 10,
+        "early_stop": 5,
 
         "tensorboard": true
     }
