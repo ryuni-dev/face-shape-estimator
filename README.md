@@ -80,7 +80,7 @@ Crop faces using face cropper.
 },
 ```
 #### Result
-![Training Result 1](saved/image/training_result_param1.png)
+![Training Result 1](image/training_result_param1.png)
 
 ### Model 2
 #### Hyperparameter Setting
@@ -102,7 +102,7 @@ Crop faces using face cropper.
 },
 ```
 #### Result
-![Training Result 2](saved/image/training_result_param2.png)
+![Training Result 2](image/training_result_param2.png)
 
 ## Test Result
 ### Model 1
