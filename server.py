@@ -52,7 +52,7 @@ def main(config):
     st.write("""
         # Face Shape Estimator
     """)
-    uploaded_file = st.file_uploader("Upload Face Image!!")
+    uploaded_file = st.file_uploader("Upload Face Image!!", type=["png","jpg","jpeg"])
     if uploaded_file is not None:
         # To read file as bytes:
         bytes_data = uploaded_file.getvalue()
@@ -73,7 +73,7 @@ def main(config):
             res = predict(model, input)
 
             res_idx = torch.argmax(res)
-            st.write(f'Your Face Shape is "{label_dict[res_idx.item()]}"')
+            st.write(f'Your face shape is "{label_dict[res_idx.item()]}"')
 
 
 if __name__ == '__main__':

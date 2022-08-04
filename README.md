@@ -45,7 +45,7 @@ This model estimates face shape with 5 classes (Heart, Oblong, Oval, Round, Squa
 ```
  streamlit run server.py -- -config path/to/config.json --resume path/to/checkpoint.pth
 ```
-![image/demo.png](image/demo_result.png)
+![image/demo.png](image/demo_res.png)
 
 ## Requirements
 * Python==3.9.4
