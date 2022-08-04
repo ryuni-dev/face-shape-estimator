@@ -8,10 +8,10 @@
   - [Introduction](#introduction)
   - [Requirements](#requirements)
   - [Dataset](#dataset)
-      - [Kaggle Face Shape Dataset](#kaggle-face-shape-dataset)
+    - [Kaggle Face Shape Dataset](#kaggle-face-shape-dataset)
     - [Preprocessing dataset](#preprocessing-dataset)
   - [Model](#model)
-      - [Pretrained Efficientnet b7](#pretrained-efficientnet-b7)
+    - [Pretrained Efficientnet b7](#pretrained-efficientnet-b7)
   - [Training Result](#training-result)
     - [Model 1](#model-1)
       - [Hyperparameter Setting](#hyperparameter-setting)
@@ -50,7 +50,7 @@ This model estimates face shape with 5 classes (Heart, Oblong, Oval, Round, Squa
 * efficientnet-pytorch  
 
 ## Dataset
-#### Kaggle Face Shape Dataset
+### Kaggle Face Shape Dataset
 [https://www.kaggle.com/datasets/niten19/face-shape-dataset](https://www.kaggle.com/datasets/niten19/face-shape-dataset)
 ### Preprocessing dataset
 Crop the face image using face cropper.
@@ -58,7 +58,7 @@ Crop the face image using face cropper.
 [https://github.com/ryuni-dev/face-cropper](https://github.com/ryuni-dev/face-cropper)
 
 ## Model
-#### Pretrained Efficientnet b7
+### Pretrained Efficientnet b7
 [https://arxiv.org/pdf/1905.11946.pdf](https://arxiv.org/pdf/1905.11946.pdf)
 ## Training Result
 ### Model 1
