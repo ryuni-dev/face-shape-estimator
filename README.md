@@ -22,6 +22,8 @@
   - [Test Result](#test-result)
     - [Model 1](#model-1-1)
     - [Model 2](#model-2-1)
+  - [Demo](#demo)
+    - [Streamlit](#streamlit)
   - [Folder Structure](#folder-structure)
   - [Usage](#usage)
     - [Config file format](#config-file-format)
@@ -115,6 +117,13 @@ Crop the face image using face cropper.
 ```
 {'loss': 1.1489163192242202, 'accuracy': 0.6014198782961461, 'top_k_acc': 0.907707910750507}
 ```
+
+## Demo
+### Streamlit
+```
+ streamlit run server.py -- -config path/to/config.json --resume path/to/checkpoint.pth
+```
+![image/demo.png](image/demo.png)
 
 ## Folder Structure
   ```
