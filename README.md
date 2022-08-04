@@ -39,8 +39,8 @@
 This model estimates face shape with 5 classes (Heart, Oblong, Oval, Round, Square).
 
 ## Requirements
-* Python 3.9.4
-* PyTorch 1.12
+* Python==3.9.4
+* PyTorch==1.12
 * tqdm (Optional for `test.py`)
 * tensorboard >= 1.14 (see [Tensorboard Visualization](#tensorboard-visualization))
 * opencv
