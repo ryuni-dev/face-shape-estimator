@@ -6,6 +6,8 @@
 
 - [Face Shape Estimator with PyTorch](#face-shape-estimator-with-pytorch)
   - [Introduction](#introduction)
+    - [Demo](#demo)
+      - [Streamlit](#streamlit)
   - [Requirements](#requirements)
   - [Dataset](#dataset)
     - [Kaggle Face Shape Dataset](#kaggle-face-shape-dataset)
@@ -22,8 +24,6 @@
   - [Test Result](#test-result)
     - [Model 1](#model-1-1)
     - [Model 2](#model-2-1)
-  - [Demo](#demo)
-    - [Streamlit](#streamlit)
   - [Folder Structure](#folder-structure)
   - [Usage](#usage)
     - [Config file format](#config-file-format)
@@ -39,6 +39,13 @@
 
 ## Introduction
 This model estimates face shape with 5 classes (Heart, Oblong, Oval, Round, Square).
+
+### Demo
+#### Streamlit
+```
+ streamlit run server.py -- -config path/to/config.json --resume path/to/checkpoint.pth
+```
+![image/demo.png](image/demo_result.png)
 
 ## Requirements
 * Python==3.9.4
@@ -117,13 +124,6 @@ Crop the face image using face cropper.
 ```
 {'loss': 1.1489163192242202, 'accuracy': 0.6014198782961461, 'top_k_acc': 0.907707910750507}
 ```
-
-## Demo
-### Streamlit
-```
- streamlit run server.py -- -config path/to/config.json --resume path/to/checkpoint.pth
-```
-![image/demo.png](image/demo_result.png)
 
 ## Folder Structure
   ```
