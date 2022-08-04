@@ -123,7 +123,7 @@ Crop the face image using face cropper.
 ```
  streamlit run server.py -- -config path/to/config.json --resume path/to/checkpoint.pth
 ```
-![image/demo.png](image/demo.png)
+![image/demo.png](image/demo_result.png)
 
 ## Folder Structure
   ```
