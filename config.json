@@ -1,5 +1,5 @@
 {
-    "name": "Face Shape - EfficientNet B7",
+    "name": "FaceShape-EfficientNet_B7",
     "n_gpu": 1,
 
     "arch": {
@@ -57,7 +57,7 @@
         "verbosity": 2,
         
         "monitor": "min val_loss",
-        "early_stop": 5,
+        "early_stop": 10,
 
         "tensorboard": true
     }

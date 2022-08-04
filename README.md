@@ -8,14 +8,26 @@
   - [Introduction](#introduction)
   - [Requirements](#requirements)
   - [Dataset](#dataset)
+      - [Kaggle Face Shape Dataset](#kaggle-face-shape-dataset)
     - [Preprocessing dataset](#preprocessing-dataset)
   - [Model](#model)
+      - [Pretrained Efficientnet b7](#pretrained-efficientnet-b7)
   - [Training Result](#training-result)
+    - [Model 1](#model-1)
+      - [Hyperparameter Setting](#hyperparameter-setting)
+      - [Result](#result)
+    - [Model 2](#model-2)
+      - [Hyperparameter Setting](#hyperparameter-setting-1)
+      - [Result](#result-1)
+  - [Test Result](#test-result)
+    - [Model 1](#model-1-1)
+    - [Model 2](#model-2-1)
   - [Folder Structure](#folder-structure)
   - [Usage](#usage)
     - [Config file format](#config-file-format)
     - [Using config files](#using-config-files)
     - [Resuming from checkpoints](#resuming-from-checkpoints)
+    - [Testing](#testing)
     - [Tensorboard Visualization](#tensorboard-visualization)
   - [License](#license)
   - [Acknowledgements](#acknowledgements)
@@ -33,14 +45,75 @@
 * opencv
 * pillow==6.2.1
 * pandas
-* scikit-learn  
+* scikit-learn
+* efficientnet-pytorch  
 
 ## Dataset
+#### Kaggle Face Shape Dataset
+[https://www.kaggle.com/datasets/niten19/face-shape-dataset](https://www.kaggle.com/datasets/niten19/face-shape-dataset)
 ### Preprocessing dataset
+Crop faces using face cropper.
+
+[https://github.com/ryuni-dev/face-cropper](https://github.com/ryuni-dev/face-cropper)
 
 ## Model
-
+#### Pretrained Efficientnet b7
+[https://arxiv.org/pdf/1905.11946.pdf](https://arxiv.org/pdf/1905.11946.pdf)
 ## Training Result
+### Model 1
+#### Hyperparameter Setting
+```
+"optimizer": {
+    "type": "Adam",
+    "args": {
+        "lr": 0.001,
+        "weight_decay": 0,
+        "amsgrad": true
+    }
+},
+"lr_scheduler": {
+    "type": "StepLR",
+    "args": {
+        "step_size": 50,
+        "gamma": 0.1
+    }
+},
+```
+#### Result
+![Training Result 1](saved/image/training_result_param1.png)
+
+### Model 2
+#### Hyperparameter Setting
+```
+"optimizer": {
+    "type": "Adam",
+    "args": {
+        "lr": 0.005,
+        "weight_decay": 0,
+        "amsgrad": true
+    }
+},
+"lr_scheduler": {
+    "type": "StepLR",
+    "args": {
+        "step_size": 30,
+        "gamma": 0.1
+    }
+},
+```
+#### Result
+![Training Result 2](saved/image/training_result_param2.png)
+
+## Test Result
+### Model 1
+```
+{'loss': 0.7550248867599766, 'accuracy': 0.7890466531440162, 'top_k_acc': 0.9675456389452333}
+```
+
+### Model 2
+```
+{'loss': 1.1489163192242202, 'accuracy': 0.6014198782961461, 'top_k_acc': 0.907707910750507}
+```
 
 ## Folder Structure
   ```
@@ -176,6 +249,10 @@ You can resume from a previously saved checkpoint by:
   python train.py --resume path/to/checkpoint
   ```
 
+### Testing
+```
+python test.py --config path/to/config.json --resume path/to/checkpoint.pth
+```
 ### Tensorboard Visualization
 This template supports Tensorboard visualization by using either  `torch.utils.tensorboard` or [TensorboardX](https://github.com/lanpa/tensorboardX).
 
