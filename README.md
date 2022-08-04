@@ -7,7 +7,7 @@
 - [Face Shape Estimator with PyTorch](#face-shape-estimator-with-pytorch)
   - [Introduction](#introduction)
     - [Demo](#demo)
-      - [Streamlit](#streamlit)
+      - [Using streamlit](#using-streamlit)
   - [Requirements](#requirements)
   - [Dataset](#dataset)
     - [Kaggle Face Shape Dataset](#kaggle-face-shape-dataset)
@@ -41,7 +41,7 @@
 This model estimates face shape with 5 classes (Heart, Oblong, Oval, Round, Square).
 
 ### Demo
-#### Streamlit
+#### Using streamlit
 ```
  streamlit run server.py -- -config path/to/config.json --resume path/to/checkpoint.pth
 ```
