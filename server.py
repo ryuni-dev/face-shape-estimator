@@ -52,7 +52,7 @@ def main(config):
     st.write("""
         # Face Shape Estimator
     """)
-    uploaded_file = st.file_uploader("Upload face Image!!")
+    uploaded_file = st.file_uploader("Upload Face Image!!")
     if uploaded_file is not None:
         # To read file as bytes:
         bytes_data = uploaded_file.getvalue()
@@ -61,7 +61,7 @@ def main(config):
 
         image = Image.open(uploaded_file)
         with col1:
-            st.header("Input face image")
+            st.header("Input Face Image")
             st.image(image)
 
         with col2:
