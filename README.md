@@ -31,11 +31,12 @@
     - [Tensorboard Visualization](#tensorboard-visualization)
   - [License](#license)
   - [Acknowledgements](#acknowledgements)
+  - [References](#references)
 
 <!-- /code_chunk_output -->
 
 ## Introduction
-
+This model estimates face shape with 5 classes (Heart, Oblong, Oval, Round, Square).
 
 ## Requirements
 * Python >= 3.5 (3.6 recommended)
@@ -52,7 +53,7 @@
 #### Kaggle Face Shape Dataset
 [https://www.kaggle.com/datasets/niten19/face-shape-dataset](https://www.kaggle.com/datasets/niten19/face-shape-dataset)
 ### Preprocessing dataset
-Crop faces using face cropper.
+Crop the face image using face cropper.
 
 [https://github.com/ryuni-dev/face-cropper](https://github.com/ryuni-dev/face-cropper)
 
@@ -246,7 +247,7 @@ Modify the configurations in `.json` config files, then run:
 You can resume from a previously saved checkpoint by:
 
   ```
-  python train.py --resume path/to/checkpoint
+  python train.py --resume path/to/checkpoint.pth
   ```
 
 ### Testing
@@ -285,3 +286,6 @@ This project is licensed under the MIT License. See  LICENSE for more details
 
 ## Acknowledgements
 * Pytorch template generated from [victoresque/pytorch-template](https://github.com/victoresque/pytorch-template)
+
+## References
+* [https://www.kaggle.com/code/tqtrinh/face-shape-efficientnetb5-acc-68](https://www.kaggle.com/code/tqtrinh/face-shape-efficientnetb5-acc-68)
