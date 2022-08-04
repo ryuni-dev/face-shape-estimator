@@ -49,6 +49,9 @@ def main(config):
             4: 'Square'
         }
 
+    st.write("""
+        # Face Shape Estimator
+    """)
     uploaded_file = st.file_uploader("Upload face Image!!")
     if uploaded_file is not None:
         # To read file as bytes:
