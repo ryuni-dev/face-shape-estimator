@@ -10,3 +10,7 @@ scikit-learn
 
 tqdm
 tensorboard>=1.14
+
+efficientnet
+
+easydict
